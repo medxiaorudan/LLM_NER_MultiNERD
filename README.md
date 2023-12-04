@@ -22,8 +22,13 @@ Built on top of the familiar [🤗 Transformers](https://github.com/huggingface/
 Fine-tune chosen model bert-base-cased and xlnet-base-cased on the English subset of the training set. 
 
 ### System B 
-Train a model that will predict only five entity types and the `O` tag (I.e. not part of an entity). Therefore, you should perform the necessary pre-processing steps on the dataset. All examples should thus remain, but entity types not belonging to one of the following five should be set to zero: `PERSON(PER)`, `ORGANIZATION(ORG)`, `LOCATION(LOC)`, `DISEASES(DIS)`, Fine-tune chosen model on the filtered dataset.
+Train a model that will predict only five entity types and the `O` tag (I.e. not part of an entity). Therefore, the necessary pre-processing steps should be performed on the dataset. All examples should thus remain, but entity types not belonging to one of the following five should be set to zero: `PERSON(PER)`, `ORGANIZATION(ORG)`, `LOCATION(LOC)`, `DISEASES(DIS)`, `ANIMAL(ANIM)`. Fine-tune the chosen models on the filtered dataset.
 
+### BERT
+BERT (Bidirectional Encoder Representations from Transformers) employs a bidirectional attention mechanism to capture contextual information from both left and right contexts. It uses pre-training tasks, such as masked language modeling, to learn contextualized embeddings. 
+
+### XLNet
+XLNet improves upon BERT by introducing permutation language modeling. It captures bidirectional context like BERT but allows for a more flexible information flow. In Named Entity Recognition (NER) tasks, these models excel at understanding the relationships between words and recognizing entities such as persons, organizations, and locations. Their deep contextual embeddings enable them to capture nuanced patterns, improving accuracy in identifying named entities within text.
 
 ## Setting up Docker environment 
 Go to folder ```docker/```.
@@ -35,4 +40,9 @@ docker build -f Dockerfile -t NER-MultiNERD \
 docker run -it --shm-size 60G --gpus all \
 -v /path/to/dir/:/home/username/NER-MultiNERD/ \
 -v /path/to/storage/:/storage/ NER-MultiNERD
+```
+## Installation
+You can install the following dependencies to run tasks in the environment:
+```bash
+pip install -r requirements.txt
 ```
