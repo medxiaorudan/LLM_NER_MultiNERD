@@ -27,7 +27,7 @@ def data_preprocessing_A(original_dataset):
     return ds, id2label, label2id
 
 def data_preprocessing_B(original_dataset):
-
+    data_filterd = original_dataset.filter(lambda example: example['lang'] == 'en')
     label_map = {
     "O": 0, "B-PER": 1,"I-PER": 2,"B-ORG": 3,"I-ORG": 4,
     "B-LOC": 5,"I-LOC": 6,"B-ANIM": 7,"I-ANIM": 8,"B-DIS": 13,
@@ -54,14 +54,14 @@ def data_preprocessing_B(original_dataset):
         }
 
     for split in ["train", "validation", "test"]:
-        original_dataset[split] = original_dataset[split].map(filter_and_transform)
+        data_filterd[split] = data_filterd[split].map(filter_and_transform)
 
-    data = original_dataset.remove_columns(["lang"])
+    data = data_filterd.remove_columns(["lang"])
 
     ds = DatasetDict({
-    'trprocessed_dataset_Bain': data['train'].filter(lambda example, idx: idx % 5 == 0, with_indices=True), 
-    'eval': data['validation'].filter(lambda example, idx: idx % 5 == 0, with_indices=True), 
-    'test': data['test'].filter(lambda example, idx: idx % 5 == 0, with_indices=True)})
+    'trprocessed_dataset_Bain': data['train'], 
+    'eval': data['validation'], 
+    'test': data['test']})
 
     label2id = {
     "O": 0, "B-PER": 1,"I-PER": 2,"B-ORG": 3,"I-ORG": 4,
