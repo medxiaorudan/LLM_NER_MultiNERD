@@ -84,11 +84,12 @@ def main_A(args, train_args):
     model.eval()    # switch to evaluation mode
 
 if __name__ == '__main__':
+    import argparse
 
     parser = argparse.ArgumentParser()
-    args = parser.parse_args()
     parser.add_argument("--MODEL_CKPT", default="bert-base-cased", required=True, type=str, help="The pre-trained model load from hugging face")
-    
+    args = parser.parse_args()
+
     MODEL_CKPT = args.MODEL_CKPT
     MODEL_NAME = f"{args.MODEL_CKPT}-finetuned-MultiNERD-SystemA"
     NUM_OF_EPOCHS = 2
@@ -121,4 +122,4 @@ if __name__ == '__main__':
         push_to_hub=False
     )
   
-    main_A(args,train_args)
+    main_A(args, train_args)

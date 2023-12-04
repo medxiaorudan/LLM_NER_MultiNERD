@@ -84,13 +84,14 @@ def main_B(args, train_args):
     model.eval()    # switch to evaluation mode
 
 if __name__ == '__main__':
+    import argparse
 
     parser = argparse.ArgumentParser()
-    args = parser.parse_args()
     parser.add_argument("--MODEL_CKPT", default="bert-base-cased", required=True, type=str, help="The pre-trained model load from hugging face")
-    
+    args = parser.parse_args()
+
     MODEL_CKPT = args.MODEL_CKPT
-    MODEL_NAME = f"{args.MODEL_CKPT}-finetuned-MultiNERD-SystemA"
+    MODEL_NAME = f"{args.MODEL_CKPT}-finetuned-MultiNERD-SystemB"
     NUM_OF_EPOCHS = 2
     BATCH_SIZE = 12
     STRATEGY = "epoch"
@@ -98,8 +99,8 @@ if __name__ == '__main__':
     WEIGHT_DECAY = 0.01
     LR = 2e-5
     STEPS = 1250
-    OUTPUT_DIR = f'/srv/users/rudxia/Developer_NLP/notebooks/results/Outdir/{args.MODEL_CKPT}-finetuned-MultiNERD-SystemA'
-    LOG_DIR= f'/srv/users/rudxia/Developer_NLP/notebooks/results/Log/{args.MODEL_CKPT}-finetuned-MultiNERD-SystemA'
+    OUTPUT_DIR = f'/srv/users/rudxia/Developer_NLP/notebooks/results/Outdir/{args.MODEL_CKPT}-finetuned-MultiNERD-SystemB'
+    LOG_DIR= f'/srv/users/rudxia/Developer_NLP/notebooks/results/Log/{args.MODEL_CKPT}-finetuned-MultiNERD-SystemB'
 
     train_args = TrainingArguments(
         OUTPUT_DIR,    
@@ -121,4 +122,4 @@ if __name__ == '__main__':
         push_to_hub=False
     )
   
-    main_B(args,train_args)
+    main_B(args, train_args)
