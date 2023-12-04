@@ -45,11 +45,11 @@ You can install the following dependencies to run tasks in the environment:
 ```bash
 pip install -r requirements.txt
 ```
-### input format
+### Input Format
 
 The BIOS tag scheme of the input, with each character its label for one line. Sentences are split with a null line.
 <left>
-<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" > 
+<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" width="70"> 
 </left>
 
 
