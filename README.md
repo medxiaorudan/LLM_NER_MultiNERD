@@ -3,7 +3,7 @@
 LLM_NER_MultiNERD
 </h1>
 <center>
-![image](https://github.com/medxiaorudan/LLM_NER_MultiNERD/assets/22127304/33c16521-5b7b-44c3-b92c-170b6aabee2c)
+![image](https://github.com/medxiaorudan/LLM_NER_MultiNERD/assets/22127304/6bcafce0-e2d1-4074-8588-828ea6f1ba48)
 </center>
 
 [🤗 MultiNERD Dataset](https://huggingface.co/models?library=span-marker) |
