@@ -3,9 +3,6 @@ from datasets import load_dataset, DatasetDict
 def data_preprocessing_A(original_dataset):
     data = original_dataset.filter(lambda example: example['lang'] == 'en')
     data = data.remove_columns(["lang"])
-    original_dataset = load_dataset('Babelscape/multinerd')
-    data = original_dataset.filter(lambda example: example['lang'] == 'en')
-    data = data.remove_columns(["lang"])
 
     ds = DatasetDict({
         'train': data['train'], 
