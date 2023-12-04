@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 The BIOS tag scheme of the input, with each character its label for one line. Sentences are split with a null line.
 <left>
-<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" width="120"> 
+<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" width="300"> 
 </left>
 
 
