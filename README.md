@@ -71,7 +71,7 @@ The fine-tune XLNET for System B:
 ```bash
 python main_B.py --MODEL_CKPT xlnet-base-cased
 ```
-### CLUENER result
+### Evaluation results
 
 The overall performance of BERT and XLNET on **dev** (The more detailed results about validation and visualization can be found in [Notebooks](https://github.com/medxiaorudan/LLM_NER_MultiNERD/tree/main/Notebooks):
 
