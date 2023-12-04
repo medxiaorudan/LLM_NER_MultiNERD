@@ -30,7 +30,7 @@ BERT (Bidirectional Encoder Representations from Transformers) employs a bidirec
 ### XLNet
 XLNet improves upon BERT by introducing permutation language modeling. It captures bidirectional context like BERT but allows for a more flexible information flow. In Named Entity Recognition (NER) tasks, these models excel at understanding the relationships between words and recognizing entities such as persons, organizations, and locations. Their deep contextual embeddings enable them to capture nuanced patterns, improving accuracy in identifying named entities within text.
 
-## Setting up Docker environment 
+## Setting up the Docker environment and installing the dependencies
 Go to folder ```docker/```.
 ```
 docker build -f Dockerfile -t NER-MultiNERD \
@@ -41,8 +41,15 @@ docker run -it --shm-size 60G --gpus all \
 -v /path/to/dir/:/home/username/NER-MultiNERD/ \
 -v /path/to/storage/:/storage/ NER-MultiNERD
 ```
-## Installation
 You can install the following dependencies to run tasks in the environment:
 ```bash
 pip install -r requirements.txt
 ```
+### input format
+
+The BIOS tag scheme of the input, with each character its label for one line. Sentences are split with a null line.
+<left>
+<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" width="700" > 
+</left>
+
+
