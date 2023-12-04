@@ -78,7 +78,7 @@ The overall performance of BERT and XLNET on **dev** (The more detailed results 
 |              | Accuracy (entity)  | Recall (entity)    | Precision (entity)  | F1 score (entity)  |
 | ------------ | ------------------ | ------------------ | ------------------ |------------------ |
 | BERT+SystemA | 0.9861     | 0.9685     | 0.8699    | 0.9165   |
-| BERT+SystemB     | 0.9922 | 0.9740 | 0.9206 | 0.9466   |
+| BERT+SystemB     | 0.9922 | 0.9740 | 0.9206 | **0.9466**   |
 | XLNET+SystemA    | 0.9759 | 0.9548 | 0.7967 | 0.8687   |
-| XLNET+SystemB    | 0.9899 | **0.9771** | 0.8932 | 0.9333   |
+| XLNET+SystemB    | 0.9915 | 0.9741 | 0.9145 | 0.9434   |
 
