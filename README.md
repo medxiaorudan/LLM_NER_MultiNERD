@@ -73,7 +73,7 @@ python main_B.py --MODEL_CKPT xlnet-base-cased
 ```
 ### CLUENER result
 
-The overall performance of BERT and XLNET on **dev**:
+The overall performance of BERT and XLNET on **dev** (The more detailed results about validation and visualization can be found in [Notebooks](https://github.com/medxiaorudan/LLM_NER_MultiNERD/tree/main/Notebooks):
 
 |              | Accuracy (entity)  | Recall (entity)    | Precision (entity)  | F1 score (entity)  |
 | ------------ | ------------------ | ------------------ | ------------------ |------------------ |
