@@ -10,7 +10,7 @@ LLM_NER_MultiNERD
 [🤗 MultiNERD Dataset](https://huggingface.co/models?library=span-marker) |
 [🛠️ bert-base-cased model](https://huggingface.co/bert-base-cased) |
 [🛠️ xlnet-base-cased model](https://huggingface.co/xlnet-base-cased) |
-[📄 Paper](https://aclanthology.org/2022.findings-naacl.60.pdf) | 
+[📄 Paper for Dataset](https://aclanthology.org/2022.findings-naacl.60.pdf) | 
 </div>
 
 
