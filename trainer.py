@@ -69,7 +69,7 @@ class CustomTrainerB(Trainer):
         return (loss, outputs) if return_outputs else loss
 
 def TrainerB(args, model, data_collator, compute_metrics, tokenizer, train_dataset, eval_dataset):
-    trainer = CustomTrainerA(model=model,
+    trainer = CustomTrainerB(model=model,
                            args=args,
                            data_collator=data_collator,
                            compute_metrics=compute_metrics,

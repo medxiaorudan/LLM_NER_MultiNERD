@@ -27,35 +27,11 @@ def main_B(args, train_args):
     NUM_OF_LABELS = len(pos_tag_values)
 
     tokenizer = AutoTokenizer.from_pretrained(args.MODEL_CKPT)
-    def tokenize_and_align_labels(samples):
-        tokenized_inputs = tokenizer(samples["tokens"], 
-                                        truncation=True, 
-                                        is_split_into_words=True)
-        
-        labels = []
-        for idx, label in enumerate(samples[f"ner_tags"]):
-            word_ids = tokenized_inputs.word_ids(batch_index=idx)
-            prev_word_idx = None
-            label_ids = []
-            for word_idx in word_ids: # set special tokens to -100
-                if word_idx is None or word_idx == prev_word_idx:
-                    label_ids.append(-100)
-                else:
-                    label_ids.append(label[word_idx])
-                prev_word_idx = word_idx
-            labels.append(label_ids)
-        
-        tokenized_inputs["labels"] = labels
-        return tokenized_inputs
 
-    encoded_ds = ds.map(tokenize_and_align_labels, 
-                        batched=True, 
-                        remove_columns=
-                            [
-                                'ner_tags', 
-                                'tokens'
-                            ]
-                        )
+    encoded_ds = ds.map(lambda x: tokenize_and_align_labels(tokenizer, x), 
+                    batched=True, 
+                    remove_columns=['ner_tags', 'tokens'])
+
     model = (AutoModelForTokenClassification.from_pretrained(
     args.MODEL_CKPT,
     num_labels=NUM_OF_LABELS,
@@ -63,11 +39,13 @@ def main_B(args, train_args):
     label2id=label2id
     ).to(DEVICE))
 
+    label_list = pos_tag_values
+
     data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
     trainer = CustomTrainerB(model, 
                     args=train_args,
                     data_collator=data_collator,
-                    compute_metrics=compute_metrics,
+                    compute_metrics=lambda p: compute_metrics(p, label_list),  
                     tokenizer=tokenizer,
                     train_dataset=encoded_ds["train"],
                     eval_dataset=encoded_ds["eval"],
