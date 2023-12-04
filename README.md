@@ -22,7 +22,7 @@ Built on top of the familiar [🤗 Transformers](https://github.com/huggingface/
 Fine-tune chosen model bert-base-cased and xlnet-base-cased on the English subset of the training set. 
 
 ### System B 
-Train a model that will predict only five entity types and the `O` tag (I.e. not part of an entity). Therefore, the necessary pre-processing steps should be performed on the dataset. All examples should thus remain, but entity types not belonging to one of the following five should be set to zero: `PERSON(PER)`, `ORGANIZATION(ORG)`, `LOCATION(LOC)`, `DISEASES(DIS)`, `ANIMAL(ANIM)`. Fine-tune the chosen models on the filtered dataset.
+Train a model that will predict only five entity types and the `O` tag (I.e. not part of an entity). Therefore, the necessary [pre-processing](https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/Data_Preprocessing.py) steps should be performed on the dataset. All examples should thus remain, but entity types not belonging to one of the following five should be set to zero: `PERSON(PER)`, `ORGANIZATION(ORG)`, `LOCATION(LOC)`, `DISEASES(DIS)`, `ANIMAL(ANIM)`. Fine-tune the chosen models on the filtered dataset.
 
 ### BERT
 BERT (Bidirectional Encoder Representations from Transformers) employs a bidirectional attention mechanism to capture contextual information from both left and right contexts. It uses pre-training tasks, such as masked language modeling, to learn contextualized embeddings. 
@@ -48,8 +48,37 @@ pip install -r requirements.txt
 ### Input Format
 
 The BIOS tag scheme of the input, with each character its label for one line. Sentences are split with a null line.
+
 <left>
 <img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" width="250"> 
 </left>
 
+### Run the code
+
+The fine-tune BERT for System A:
+```bash
+python main_A.py --MODEL_CKPT bert-base-cased
+```
+The fine-tune BERT for System B:
+```bash
+python main_B.py --MODEL_CKPT bert-base-cased
+```
+The fine-tune XLNET for System A:
+```bash
+python main_A.py --MODEL_CKPT xlnet-base-cased
+```
+The fine-tune XLNET for System B:
+```bash
+python main_B.py --MODEL_CKPT xlnet-base-cased
+```
+### CLUENER result
+
+The overall performance of BERT and XLNET on **dev**:
+
+|              | Accuracy (entity)  | Recall (entity)    | F1 score (entity)  |
+| ------------ | ------------------ | ------------------ | ------------------ |
+| BERT+SystemA | 0.7897     | 0.8031     | 0.7963    |
+| BERT+SystemB     | 0.7977 | 0.8177 | 0.8076 |
+| XLNET+SystemA    | 0.8132 | 0.8092 | 0.8112 |
+| XLNET+SystemB    | 0.8267 | 0.8073 | **0.8169** |
 
