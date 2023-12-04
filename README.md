@@ -2,8 +2,9 @@
 <h1>
 LLM_NER_MultiNERD
 </h1>
+
 <center>
-![image](https://github.com/medxiaorudan/LLM_NER_MultiNERD/assets/22127304/6bcafce0-e2d1-4074-8588-828ea6f1ba48)
+<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/displacy.PNG" width="700" > 
 </center>
 
 [🤗 MultiNERD Dataset](https://huggingface.co/models?library=span-marker) |
