@@ -5,10 +5,10 @@ def data_preprocessing_A(original_dataset):
     data = data.remove_columns(["lang"])
 
     ds = DatasetDict({
-        'train': data['train'], 
-        'eval': data['validation'], 
-        'test': data['test']})
-
+    'train': data['train'], 
+    'eval': data['validation'], 
+    'test': data['test']})
+    
     label2id = {
         "O": 0, "B-PER": 1, "I-PER": 2, "B-ORG": 3, "I-ORG": 4,
         "B-LOC": 5, "I-LOC": 6, "B-ANIM": 7, "I-ANIM": 8, "B-BIO": 9,
@@ -56,7 +56,7 @@ def data_preprocessing_B(original_dataset):
     data = data_filterd.remove_columns(["lang"])
 
     ds = DatasetDict({
-    'trprocessed_dataset_Bain': data['train'], 
+    'train': data['train'], 
     'eval': data['validation'], 
     'test': data['test']})
 
