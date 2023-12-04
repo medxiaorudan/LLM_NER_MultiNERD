@@ -13,6 +13,17 @@ LLM_NER_MultiNERD
 [📄 Paper for Dataset](https://aclanthology.org/2022.findings-naacl.60.pdf) | 
 </div>
 
+LLM_NER_MultiNERD is a Using the MultiNERD Named Entity Recognition (NER) dataset, complete the following instructions to train and 
+evaluate a Named Entity Recognition model for English using BERT and XLNET.
+Built on top of the familiar [🤗 Transformers](https://github.com/huggingface/transformers) library.
+
+## Instructions:
+### System A 
+Fine-tune chosen model bert-base-cased and xlnet-base-cased on the English subset of the training set. 
+
+### System B 
+Train a model that will predict only five entity types and the `O` tag (I.e. not part of an entity). Therefore, you should perform the necessary pre-processing steps on the dataset. All examples should thus remain, but entity types not belonging to one of the following five should be set to zero: `PERSON(PER)`, `ORGANIZATION(ORG)`, `LOCATION(LOC)`, `DISEASES(DIS)`, Fine-tune chosen model on the filtered dataset.
+
 
 ## Setting up Docker environment 
 Go to folder ```docker/```.
