@@ -75,10 +75,10 @@ python main_B.py --MODEL_CKPT xlnet-base-cased
 
 The overall performance of BERT and XLNET on **dev**:
 
-|              | Accuracy (entity)  | Recall (entity)    | F1 score (entity)  |
-| ------------ | ------------------ | ------------------ | ------------------ |
-| BERT+SystemA | 0.7897     | 0.8031     | 0.7963    |
-| BERT+SystemB     | 0.7977 | 0.8177 | 0.8076 |
-| XLNET+SystemA    | 0.8132 | 0.8092 | 0.8112 |
-| XLNET+SystemB    | 0.8267 | 0.8073 | **0.8169** |
+|              | Accuracy (entity)  | Recall (entity)    | Precision (entity)  | F1 score (entity)  |
+| ------------ | ------------------ | ------------------ | ------------------ |------------------ |
+| BERT+SystemA | 0.9861     | 0.9685     | 0.8699    | 0.9165   |
+| BERT+SystemB     | 0.9922 | 0.9740 | 0.9206 | 0.9466   |
+| XLNET+SystemA    | 0.9759 | 0.9548 | 0.7967 | 0.8687   |
+| XLNET+SystemB    | 0.9899 | **0.9771** | 0.8932 | 0.9333   |
 
