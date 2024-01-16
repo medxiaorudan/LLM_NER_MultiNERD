@@ -4,7 +4,9 @@ LLM_NER_MultiNERD
 </h1>
 
 <center>
-<img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/displacy.PNG" width="700" > 
+<img src="c++11 - Unable to compile simple C++ program - Stack Overflow
+https://www.bing.com/images/search?q=&view=detailv2&id=8D0B6C6E6D020702761CF2444150A524DCD56A43&ccid=FNw0PWWX&iss=fav&FORM=SVIM01&idpview=singleimage&mediaurl=https%253a%252f%252fi.stack.imgur.com%252fvTsEq.gif&expw=636&exph=345&thid=OIP.FNw0PWWXxVN854SN4HCFagHaEB
+stackoverflow.com" width="700" > 
 </center>
 
 [🤗 MultiNERD Dataset](https://huggingface.co/models?library=span-marker) |
