@@ -53,7 +53,7 @@ The BIOS tag scheme of the input, with each character its label for one line. Se
 <img src="https://github.com/medxiaorudan/LLM_NER_MultiNERD/blob/main/images/BIOS.PNG" width="220"> 
 </left>
 
-### Run the code
+### Run the code for finetuning
 
 The fine-tune BERT for System A:
 ```bash
@@ -71,6 +71,17 @@ The fine-tune XLNET for System B:
 ```bash
 python main_B.py --MODEL_CKPT xlnet-base-cased
 ```
+
+### Load Fine-tuned Models directly from Hugging Face 🤗
+I have uploaded the fine-tuned models to [Hugging Face](https://huggingface.co/medxiaorudan), you can load or inference them with API directly, here is an example.
+
+```bash
+from transformers import AutoTokenizer, AutoModelForTokenClassification
+
+tokenizer = AutoTokenizer.from_pretrained("medxiaorudan/bert-base-cased-finetuned-MultiNERD-SystemA")
+model = AutoModelForTokenClassification.from_pretrained("medxiaorudan/bert-base-cased-finetuned-MultiNERD-SystemA")
+```
+
 ### Evaluation results
 
 The overall performance of BERT and XLNET on **dev** (The more detailed results about validation and visualization can be found in [Notebooks](https://github.com/medxiaorudan/LLM_NER_MultiNERD/tree/main/Notebooks):
